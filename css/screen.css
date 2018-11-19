@@ -1,6 +1,7 @@
 /*------------------------------------*\
 #FONTS
 \*------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 /*------------------------------------*\
 #Variables
@@ -15,12 +16,40 @@
     --color-neutral: SLATEGRAY;
     --color-neutral-dark: DARKSLATEGRAY;
 
+
+    --color-xxx-light: #F0F0F7;
+    --color-xx-light:#EBEBF2;
+    --color-x-light: #D7DAE2;
+    --color-light: #BCBCCB;
+
+    --color-medium: #A5A4BF;
+
+    --color-dark: #808495;
+    --color-x-dark: #4D4F5C;
+    --color-xx-dark: #43425D;
+    --color-xxx-dark: #3B3B53;
+
+    --color-green: #3CC480;
+    --color-light-red:#FF6565;
+    --color-blue: #3B86FF;
+    --color-purple: #A3A0FB;
+    --color-cyan: #54D8FF;
+
+
     /* Shadows */
 
     /* border radius */
 
     /* transitions */
     --transition-alpha: .1s;
+    
+    --baseline: 5px;
+    --whitespace-xs: calc(var(--baseline) * 2);
+    --whitespace-s: calc(var(--baseline) * 3);
+    --whitespace-m: calc(var(--baseline) * 4);
+    --whitespace-l: calc(var(--baseline) * 5);
+    --whitespace-xl: calc(var(--baseline) * 6);
+
 }
 
 /*------------------------------------*\
@@ -34,15 +63,17 @@
 */
 
 html {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     color: var(--color-neutral-dark);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: white;
 }
+
+
 
 *,
 *:before,
@@ -99,19 +130,19 @@ h3 {
 h1 {
     font-size: 36px;
     line-height: 48px;
-    margin: 0 0 24px;
+    margin: 0 0 var(--whitespace-l);
 }
 
 h2 {
     font-size: 32px;
     line-height: 40px;
-    margin: 0 0 24px;
+    margin: 0 0  var(--whitespace-l);
 }
 
 h3 {
     font-size: 26px;
     line-height: 32px;
-    margin: 0 0 24px;
+    margin: 0 0  var(--whitespace-l);
 }
 
 h4,
@@ -120,7 +151,7 @@ h6 {
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
-    margin: 0 0 24px;
+    margin: 0 0  var(--whitespace-l);
 }
 
 p,
@@ -130,12 +161,12 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0  var(--whitespace-l);
 }
 
 ul,
 ol {
-    padding-left: 24px;
+    padding-left:  var(--whitespace-l);
 }
 
 li ul,
@@ -147,7 +178,7 @@ blockquote {
     font-style: normal;
     font-size: 23px;
     line-height: 32px;
-    margin: 0 0 24px;
+    margin: 0 0  var(--whitespace-l);
 }
 
 blockquote * {
@@ -159,14 +190,14 @@ figcaption {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    margin-top: 8px;
+    margin-top:  var(--whitespace-xs);
 }
 
 hr {
     border: 0;
     height: 1px;
     background: LightGrey;
-    margin: 0 0 24px;
+    margin: 0 0  var(--whitespace-l);
 }
 
 a {
@@ -294,6 +325,43 @@ input::placeholder {
     ---
     Website main logo
 */
+
+.logo{
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.c-app{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-gap:0;
+}
+
+.c-app__topbar{
+    box-shadow: 0 0 10px rgba(0,0,0,.05);
+    position: relative;
+}
+
+.c-app__logo{
+    background-color: var(--color-xxx-dark);
+    padding: var(--whitespace-l);
+}
+   
+.c-app__sidebar{
+    background-color: var(--color-xx-dark);
+}
+
+.c-app__main{
+    background-color: var(--color-xxx-light);
+
+
+}
 
 /*------------------------------------*\
 #UTILITIES
